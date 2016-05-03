@@ -18,7 +18,8 @@ class HomepagePresenter extends BasePresenter {
 	protected function createComponentSearchForm() {
 		$f = new \Nette\Application\UI\Form();
 		$f->addText('query', 'Uživatelské jméno')
-				->setRequired();
+				->setRequired()
+				->addRule(\Nette\Application\UI\Form::MAX_LENGTH, 'Uivatelské jméno nemůže být delší než %d znaků!', 39);
 		$f->addSubmit('submit', 'Hledat');
 		
 		$f->onSuccess[] = $this->searchFormSubmitted;	
