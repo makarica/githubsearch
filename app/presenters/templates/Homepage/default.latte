@@ -1,3 +1,11 @@
 {* This is the welcome page, you can delete it *}
 
 {block content}
+{control searchForm}
+<div n:foreach="$results as $r" n:if="$r['private'] == FALSE">
+	<h3>{$r['full_name']}</h3>
+	Vytvořeno: {$r['created_at']}<br />
+	<a href="{$r['html_url']}">{$r['html_url']}</a>
+	<p>{$r['description']}</p>
+
+</div>
