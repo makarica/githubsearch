@@ -27,3 +27,4 @@ session:
 services:
 	router: App\RouterFactory::createRouter
 	authenticator: GHSS\Model\Authenticator
+	- GHSS\Model\GitHubDatasource
