@@ -5,3 +5,7 @@ menu:
 				target: Homepage:default
 			Seznam vyhledávání: 
 				target: Homepage:list
+			Správa:
+				target: Homepage:manage
+				allow:
+					loggedIn: true

@@ -16,7 +16,9 @@ namespace GHSS\Model;
 class SearchesRepository extends Repository {
 	
 	public function deleteOlderThan($hours) {
-		
+		$time  = new \Nette\Utils\DateTime;
+		$time->sub(new \DateInterval('PT'. $hours. 'H'));
+		return $this->findBy(array('time <' => $time))->delete();
 	}
 	
 }
