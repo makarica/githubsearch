@@ -1,0 +1,6 @@
+menu:
+	default:
+		items:
+			Homepage: 
+				target: Homepage:default	
+				include: '^Destination\:[a-zA-Z]+$'

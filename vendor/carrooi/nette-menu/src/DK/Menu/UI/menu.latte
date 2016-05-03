@@ -2,8 +2,8 @@
 	{var $menuParent = $menu}
 {/if}
 
-<ul n:block="branch" n:if="$menuParent->hasVisualItems()">
-	<li n:foreach="$menuParent->getItems() as $item" n:if="$item->isVisual() && $item->isAllowed()">
+<ul n:block="branch" n:if="$menuParent->hasVisualItems()" class="nav navbar-nav">
+	<li n:foreach="$menuParent->getItems() as $item" n:if="$item->isVisual() && $item->isAllowed()" n:class="$item->isActive() ? active">
 		<a href="{$item->getLink()}" n:class="$item->isActive() ? active">{$item->getTranslatedTitle()}</a>
 		{include branch, menuParent => $item}
 	</li>

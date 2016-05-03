@@ -1,6 +1,12 @@
 # WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
 # https://nette.org/security-warning
 
+extensions:
+    menu: DK\Menu\DI\Extension
+
+includes:
+    - ./menu.neon
+
 parameters:
 
 
@@ -20,3 +26,4 @@ session:
 
 services:
 	router: App\RouterFactory::createRouter
+	authenticator: GHSS\Model\Authenticator
