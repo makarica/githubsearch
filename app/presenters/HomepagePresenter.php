@@ -9,6 +9,9 @@ class HomepagePresenter extends BasePresenter {
 	/** @var \GHSS\Model\GitHubDatasource @inject */
 	public $github;	
 	
+	/** @var \GHSS\Model\SearchesRepository @inject */
+	public $searchesRepo;
+	
 	private $results = array();
 
 	public function renderDefault() {
@@ -37,6 +40,11 @@ class HomepagePresenter extends BasePresenter {
 			$this->results = array();
 			$this->errorFlash($data->body['message']);
 		}
+		
+		$this->searchesRepo->create(array(
+			'query' => $v->query,
+			'time' => new Nette\Utils\DateTime()
+		));
 	
 	}
 

@@ -13,7 +13,7 @@ namespace GHSS\Model;
  *
  * @author Alexandr Makaric <alexandr@makaric.name>
  */
-class GitHubDatasource extends Repository {
+class GitHubDatasource extends RESTRepository {
 	const HOSTNAME = 'https://api.github.com/';
 	
 	public function getRepositoriesOf($username) {
