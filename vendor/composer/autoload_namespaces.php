@@ -6,4 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Unirest' => array($vendorDir . '/mashape/unirest-php/src'),
+    'DK\\Menu\\' => array($vendorDir . '/carrooi/nette-menu/src'),
 );
