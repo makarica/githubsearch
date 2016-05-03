@@ -1,0 +1,30 @@
+{* Latte template *}
+
+{block content}
+<div class="text-center">
+	<a n:if="!$paginator->first" n:href="this page => $page-1" class="btn btn-default"><i class="glyphicon glyphicon-triangle-left"></i></a>
+		{$page}
+	<a n:if="!$paginator->last" n:href="this page => $page+1" class="btn btn-default"><i class="glyphicon glyphicon-triangle-right"></i></a>
+</div>
+<br />
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<td>Hledání</td>
+			<td>Čas</td>
+			<td>IP adresa</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr n:foreach="$searches as $s">
+			<td>{$s->query}</td>
+			<td>{$s->time}</td>
+			<td>{$s->ip}</td>
+		</tr>
+	</tbody>
+</table>
+<div class="text-center">
+	<a n:if="!$paginator->first" n:href="this page => $page-1" class="btn btn-default"><i class="glyphicon glyphicon-triangle-left"></i></a>
+		{$page}
+	<a n:if="!$paginator->last" n:href="this page => $page+1" class="btn btn-default"><i class="glyphicon glyphicon-triangle-right"></i></a>
+</div>

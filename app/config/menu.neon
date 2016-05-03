@@ -1,6 +1,7 @@
 menu:
 	default:
 		items:
-			Homepage: 
-				target: Homepage:default	
-				include: '^Destination\:[a-zA-Z]+$'
+			Home: 
+				target: Homepage:default
+			Seznam vyhledávání: 
+				target: Homepage:list
