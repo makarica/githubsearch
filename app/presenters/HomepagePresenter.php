@@ -36,6 +36,9 @@ class HomepagePresenter extends BasePresenter {
 		if ($p->getPageCount() < $this->page) {
 			$this->page = $p->getPageCount();
 		}
+		if ($this->page < 1) {
+			$this->page = 1;
+		}
 		
 		$p->setPage($this->page);
 
